@@ -28,20 +28,8 @@ struct TrialWidgetEntryView: View {
     
     var qrText = "00020101021129390016wbkhkhppxxx@wbkh0108304778120203WBC5204599953038405802KH5912YEN PHEAYUIT6010Phnom Penh6304D5B2"
     
-    let now = Date()
     
-    var formattedDate: String {
-            let timeFormatter = DateFormatter()
-            timeFormatter.dateFormat = "HH:mm"
-
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MMM dd, yyyy"
-
-            let timeString = timeFormatter.string(from: now)
-            let dateString = dateFormatter.string(from: now)
-
-            return "\(timeString) | \(dateString)"
-        }
+    var storeDate = UserDefaultsManager.shared.stringValue(forKey: "syncDate")
     
     @Environment (\.widgetFamily) var widgetFamily
     
@@ -82,7 +70,7 @@ struct TrialWidgetEntryView: View {
                 }
                 Spacer(minLength: 5)
                 VStack {
-                    Text("Updated: \(formattedDate)")
+                    Text("Updated: \(storeDate ?? "")")
                         .font(.system(size: 9))
                         .fontWeight(.regular)
                         .foregroundStyle(.gray)

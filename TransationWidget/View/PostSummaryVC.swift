@@ -15,6 +15,20 @@ class PostSummaryVC: UIViewController, UITextFieldDelegate {
     var totalAmount: Double?
     
     @State private var someValue: String = ""
+    let now = Date()
+    
+    var formattedDate: String {
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "HH:mm"
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM dd, yyyy"
+        
+        let timeString = timeFormatter.string(from: now)
+        let dateString = dateFormatter.string(from: now)
+        
+        return "\(timeString) | \(dateString)"
+    }
     
     lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -88,6 +102,7 @@ class PostSummaryVC: UIViewController, UITextFieldDelegate {
                 // Read the value after a slight delay to ensure the update is complete
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                     UserDefaultsManager.shared.doubleValue(self.totalAmount ?? 0.0, forKey: "totalAmount")
+                    UserDefaultsManager.shared.setStringValue(self.formattedDate, forKey: "syncDate")
                 }
                 WidgetCenter.shared.reloadTimelines(ofKind: "MyCustomWidget")
                 WidgetCenter.shared.reloadAllTimelines()
