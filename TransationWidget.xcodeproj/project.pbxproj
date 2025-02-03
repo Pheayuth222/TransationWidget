@@ -13,7 +13,41 @@
 		46A9B7A22D505D2200A3BE65 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 46A9B7A12D505D2200A3BE65 /* Base */; };
 		46A9B7A42D505D2500A3BE65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46A9B7A32D505D2500A3BE65 /* Assets.xcassets */; };
 		46A9B7A72D505D2500A3BE65 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 46A9B7A62D505D2500A3BE65 /* Base */; };
+		46A9B7B52D505D7300A3BE65 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46A9B7B42D505D7200A3BE65 /* WidgetKit.framework */; };
+		46A9B7B72D505D7300A3BE65 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46A9B7B62D505D7300A3BE65 /* SwiftUI.framework */; };
+		46A9B7BA2D505D7300A3BE65 /* PaymentWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9B7B92D505D7300A3BE65 /* PaymentWidgetBundle.swift */; };
+		46A9B7BC2D505D7300A3BE65 /* PaymentWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9B7BB2D505D7300A3BE65 /* PaymentWidget.swift */; };
+		46A9B7BE2D505D7500A3BE65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46A9B7BD2D505D7500A3BE65 /* Assets.xcassets */; };
+		46A9B7C22D505D7500A3BE65 /* PaymentWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 46A9B7B22D505D7200A3BE65 /* PaymentWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		46A9B7C82D505EC700A3BE65 /* PostSummaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9B7C72D505EC700A3BE65 /* PostSummaryVC.swift */; };
+		46A9B7CF2D50688C00A3BE65 /* UIKitPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9B7CE2D50688C00A3BE65 /* UIKitPreview.swift */; };
+		46A9B7D12D5068B000A3BE65 /* MyExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9B7D02D5068B000A3BE65 /* MyExtension.swift */; };
+		46A9B7D22D50790000A3BE65 /* MyExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9B7D02D5068B000A3BE65 /* MyExtension.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		46A9B7C02D505D7500A3BE65 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46A9B78F2D505D2200A3BE65 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 46A9B7B12D505D7200A3BE65;
+			remoteInfo = PaymentWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		46A9B7C62D505D7500A3BE65 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				46A9B7C22D505D7500A3BE65 /* PaymentWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		46A9B7972D505D2200A3BE65 /* TransationWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransationWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +58,18 @@
 		46A9B7A32D505D2500A3BE65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46A9B7A62D505D2500A3BE65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		46A9B7A82D505D2500A3BE65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46A9B7B22D505D7200A3BE65 /* PaymentWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PaymentWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		46A9B7B42D505D7200A3BE65 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		46A9B7B62D505D7300A3BE65 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		46A9B7B92D505D7300A3BE65 /* PaymentWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWidgetBundle.swift; sourceTree = "<group>"; };
+		46A9B7BB2D505D7300A3BE65 /* PaymentWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWidget.swift; sourceTree = "<group>"; };
+		46A9B7BD2D505D7500A3BE65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		46A9B7BF2D505D7500A3BE65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46A9B7C72D505EC700A3BE65 /* PostSummaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSummaryVC.swift; sourceTree = "<group>"; };
+		46A9B7C92D505F0B00A3BE65 /* TransationWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TransationWidget.entitlements; sourceTree = "<group>"; };
+		46A9B7CA2D505F2000A3BE65 /* PaymentWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PaymentWidgetExtension.entitlements; sourceTree = "<group>"; };
+		46A9B7CE2D50688C00A3BE65 /* UIKitPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitPreview.swift; sourceTree = "<group>"; };
+		46A9B7D02D5068B000A3BE65 /* MyExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,13 +80,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		46A9B7AF2D505D7200A3BE65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46A9B7B72D505D7300A3BE65 /* SwiftUI.framework in Frameworks */,
+				46A9B7B52D505D7300A3BE65 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		46A9B78E2D505D2200A3BE65 = {
 			isa = PBXGroup;
 			children = (
+				46A9B7CA2D505F2000A3BE65 /* PaymentWidgetExtension.entitlements */,
 				46A9B7992D505D2200A3BE65 /* TransationWidget */,
+				46A9B7B82D505D7300A3BE65 /* PaymentWidget */,
+				46A9B7B32D505D7200A3BE65 /* Frameworks */,
 				46A9B7982D505D2200A3BE65 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				46A9B7972D505D2200A3BE65 /* TransationWidget.app */,
+				46A9B7B22D505D7200A3BE65 /* PaymentWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,15 +115,63 @@
 		46A9B7992D505D2200A3BE65 /* TransationWidget */ = {
 			isa = PBXGroup;
 			children = (
-				46A9B79A2D505D2200A3BE65 /* AppDelegate.swift */,
-				46A9B79C2D505D2200A3BE65 /* SceneDelegate.swift */,
-				46A9B79E2D505D2200A3BE65 /* ViewController.swift */,
-				46A9B7A02D505D2200A3BE65 /* Main.storyboard */,
+				46A9B7C92D505F0B00A3BE65 /* TransationWidget.entitlements */,
+				46A9B7CD2D50683B00A3BE65 /* Extension */,
+				46A9B7CB2D50640800A3BE65 /* Delegate */,
+				46A9B7CC2D50641400A3BE65 /* View */,
 				46A9B7A32D505D2500A3BE65 /* Assets.xcassets */,
 				46A9B7A52D505D2500A3BE65 /* LaunchScreen.storyboard */,
 				46A9B7A82D505D2500A3BE65 /* Info.plist */,
 			);
 			path = TransationWidget;
+			sourceTree = "<group>";
+		};
+		46A9B7B32D505D7200A3BE65 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				46A9B7B42D505D7200A3BE65 /* WidgetKit.framework */,
+				46A9B7B62D505D7300A3BE65 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		46A9B7B82D505D7300A3BE65 /* PaymentWidget */ = {
+			isa = PBXGroup;
+			children = (
+				46A9B7B92D505D7300A3BE65 /* PaymentWidgetBundle.swift */,
+				46A9B7BB2D505D7300A3BE65 /* PaymentWidget.swift */,
+				46A9B7BD2D505D7500A3BE65 /* Assets.xcassets */,
+				46A9B7BF2D505D7500A3BE65 /* Info.plist */,
+			);
+			path = PaymentWidget;
+			sourceTree = "<group>";
+		};
+		46A9B7CB2D50640800A3BE65 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				46A9B79A2D505D2200A3BE65 /* AppDelegate.swift */,
+				46A9B79C2D505D2200A3BE65 /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		46A9B7CC2D50641400A3BE65 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				46A9B7C72D505EC700A3BE65 /* PostSummaryVC.swift */,
+				46A9B79E2D505D2200A3BE65 /* ViewController.swift */,
+				46A9B7A02D505D2200A3BE65 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		46A9B7CD2D50683B00A3BE65 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				46A9B7CE2D50688C00A3BE65 /* UIKitPreview.swift */,
+				46A9B7D02D5068B000A3BE65 /* MyExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,15 +184,34 @@
 				46A9B7932D505D2200A3BE65 /* Sources */,
 				46A9B7942D505D2200A3BE65 /* Frameworks */,
 				46A9B7952D505D2200A3BE65 /* Resources */,
+				46A9B7C62D505D7500A3BE65 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				46A9B7C12D505D7500A3BE65 /* PBXTargetDependency */,
 			);
 			name = TransationWidget;
 			productName = TransationWidget;
 			productReference = 46A9B7972D505D2200A3BE65 /* TransationWidget.app */;
 			productType = "com.apple.product-type.application";
+		};
+		46A9B7B12D505D7200A3BE65 /* PaymentWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46A9B7C32D505D7500A3BE65 /* Build configuration list for PBXNativeTarget "PaymentWidgetExtension" */;
+			buildPhases = (
+				46A9B7AE2D505D7200A3BE65 /* Sources */,
+				46A9B7AF2D505D7200A3BE65 /* Frameworks */,
+				46A9B7B02D505D7200A3BE65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PaymentWidgetExtension;
+			productName = PaymentWidgetExtension;
+			productReference = 46A9B7B22D505D7200A3BE65 /* PaymentWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -98,6 +224,9 @@
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					46A9B7962D505D2200A3BE65 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					46A9B7B12D505D7200A3BE65 = {
 						CreatedOnToolsVersion = 15.4;
 					};
 				};
@@ -116,6 +245,7 @@
 			projectRoot = "";
 			targets = (
 				46A9B7962D505D2200A3BE65 /* TransationWidget */,
+				46A9B7B12D505D7200A3BE65 /* PaymentWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -131,6 +261,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		46A9B7B02D505D7200A3BE65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46A9B7BE2D505D7500A3BE65 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -138,13 +276,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46A9B7CF2D50688C00A3BE65 /* UIKitPreview.swift in Sources */,
 				46A9B79F2D505D2200A3BE65 /* ViewController.swift in Sources */,
 				46A9B79B2D505D2200A3BE65 /* AppDelegate.swift in Sources */,
 				46A9B79D2D505D2200A3BE65 /* SceneDelegate.swift in Sources */,
+				46A9B7C82D505EC700A3BE65 /* PostSummaryVC.swift in Sources */,
+				46A9B7D12D5068B000A3BE65 /* MyExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46A9B7AE2D505D7200A3BE65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46A9B7BC2D505D7300A3BE65 /* PaymentWidget.swift in Sources */,
+				46A9B7BA2D505D7300A3BE65 /* PaymentWidgetBundle.swift in Sources */,
+				46A9B7D22D50790000A3BE65 /* MyExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		46A9B7C12D505D7500A3BE65 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 46A9B7B12D505D7200A3BE65 /* PaymentWidgetExtension */;
+			targetProxy = 46A9B7C02D505D7500A3BE65 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		46A9B7A02D505D2200A3BE65 /* Main.storyboard */ = {
@@ -218,7 +377,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -275,7 +434,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -288,8 +447,10 @@
 		46A9B7AC2D505D2500A3BE65 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TransationWidget/TransationWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TF5B328KPW;
@@ -316,8 +477,10 @@
 		46A9B7AD2D505D2500A3BE65 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TransationWidget/TransationWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TF5B328KPW;
@@ -341,6 +504,64 @@
 			};
 			name = Release;
 		};
+		46A9B7C42D505D7500A3BE65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = PaymentWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TF5B328KPW;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PaymentWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PaymentWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TransationWidget.PaymentWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		46A9B7C52D505D7500A3BE65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = PaymentWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TF5B328KPW;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PaymentWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PaymentWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TransationWidget.PaymentWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -358,6 +579,15 @@
 			buildConfigurations = (
 				46A9B7AC2D505D2500A3BE65 /* Debug */,
 				46A9B7AD2D505D2500A3BE65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		46A9B7C32D505D7500A3BE65 /* Build configuration list for PBXNativeTarget "PaymentWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46A9B7C42D505D7500A3BE65 /* Debug */,
+				46A9B7C52D505D7500A3BE65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
