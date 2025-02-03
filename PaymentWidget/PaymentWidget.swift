@@ -26,20 +26,91 @@ struct TrialWidgetEntryView: View {
     var entry: Provider.Entry
     var storeAmount = UserDefaultsManager.shared.stringValue(forKey: "totalAmount") ?? "0.0"
     
+    var qrText = "00020101021129390016wbkhkhppxxx@wbkh0108304778120203WBC5204599953038405802KH5912YEN PHEAYUIT6010Phnom Penh6304D5B2"
+    
+    let now = Date()
+    
+    var formattedDate: String {
+            let timeFormatter = DateFormatter()
+            timeFormatter.dateFormat = "HH:mm"
+
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMM dd, yyyy"
+
+            let timeString = timeFormatter.string(from: now)
+            let dateString = dateFormatter.string(from: now)
+
+            return "\(timeString) | \(dateString)"
+        }
+    
     @Environment (\.widgetFamily) var widgetFamily
     
     var body: some View {
         
         switch widgetFamily {
         case .systemSmall:
-            Text("Amount $\(storeAmount)")
-            
-                .widgetURL(URL(string: "myapp://PostSummaryVC/\(storeAmount)"))
+            VStack {
+                Text("Woori QR")
+                    .font(.headline)
+                    .foregroundStyle(.blue)
+                ZStack {
+                    Image(uiImage: UIImage(data: getQRCodeDate(text: qrText)!)!)
+                        .resizable()
+                        .frame(width: 100, height: 100,alignment: .leading)
+                    Image("wooriLogo")
+                        .resizable()
+                        .frame(width: 24, height: 24, alignment: .center)
+                }
+            }
+            .widgetURL(URL(string: "myapp://ShowMyQRVC/\(storeAmount)"))
         case .systemMedium:
-            Rectangle()
             
-                .fill(Color(UIColor(red: 3, green: 96, blue: 159, alpha: 1).cgColor))
-                .cornerRadius(10.0)
+            HStack(alignment: .center) {
+                VStack {
+                    Text("Woori QR")
+                        .font(.headline)
+                        .foregroundStyle(.blue)
+                    ZStack {
+                        Image(uiImage: UIImage(data: getQRCodeDate(text: qrText)!)!)
+                            .resizable()
+                            .frame(width: 100, height: 100,alignment: .leading)
+                        Image("wooriLogo")
+                            .resizable()
+                            .frame(width: 24, height: 24, alignment: .center)
+                    }
+                    .widgetURL(URL(string: "myapp://PostSummaryVC/\(storeAmount)"))
+                }
+                Spacer(minLength: 5)
+                VStack {
+                    Text("Updated: \(formattedDate)")
+                        .font(.system(size: 9))
+                        .fontWeight(.regular)
+                        .foregroundStyle(.gray)
+                    Text("Available Balance")
+                    HStack {
+                        Text("Total: ")
+                            .font(.headline)
+                            .foregroundStyle(.blue)
+                            .padding()
+                        Text("$\(storeAmount)")
+                    }
+                    /// Button Action
+                    HStack {
+                        Button(action: {
+                            // Action
+                            print("Scanning....")
+                        }) {
+                            Label("Scan", systemImage: "barcode.viewfinder")
+                        }
+                        Button(action: {
+                            print("Sharing...")
+                        }) {
+                            Label("Share", systemImage: "square.and.arrow.up")
+                        }
+                        .widgetURL(URL(string: "myapp://PostSummaryVC/\(storeAmount)"))
+                    }
+                }
+            }
         case .systemLarge:
             VStack(alignment: .leading, spacing: 10) {
                 Text("Amount $\(storeAmount)")
@@ -56,6 +127,17 @@ struct TrialWidgetEntryView: View {
         default:
             Text("")
         }
+    }
+    
+    func getQRCodeDate(text: String) -> Data? {
+        guard let filter = CIFilter(name: "CIQRCodeGenerator") else { return nil }
+        let data = text.data(using: .ascii, allowLossyConversion: false)
+        filter.setValue(data, forKey: "inputMessage")
+        guard let ciimage = filter.outputImage else { return nil }
+        let transform = CGAffineTransform(scaleX: 10, y: 10)
+        let scaledCIImage = ciimage.transformed(by: transform)
+        let uiimage = UIImage(ciImage: scaledCIImage)
+        return uiimage.pngData()!
     }
 }
 

@@ -57,7 +57,27 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 self.navigateToPostDetailView(withTitle: postTitle ?? "")
             }
+        case "ShowMyQRVC":
+            let title = url.lastPathComponent.removingPercentEncoding
+            // Ensure the window is set up
+            guard let window = window else { return }
             
+            // Get the root view controller
+            let rootViewController = window.rootViewController
+            
+            let viewController = ShowMyQRVC()
+            
+            
+            if let firstComponent = title?.components(separatedBy: "-").first, let totalAmount = Double(firstComponent) {
+                print("Total Amount: \(totalAmount)")
+                let textPart = title?.contains("-") == true ? title?.split(separator: "-")[1] : "Empty"
+                print("My Title: \(textPart ?? "")")
+                viewController.myQR = title
+                
+            }
+            //        viewController.modalTransitionStyle = .crossDissolve
+            //        viewController.modalPresentationStyle = .fullScreen
+            rootViewController?.present(viewController, animated: true, completion: nil)
         case "product":
             
             if let components = URLComponents(url: url, resolvingAgainstBaseURL: true),

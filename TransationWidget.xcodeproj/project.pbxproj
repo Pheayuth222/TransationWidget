@@ -23,6 +23,7 @@
 		46A9B7CF2D50688C00A3BE65 /* UIKitPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9B7CE2D50688C00A3BE65 /* UIKitPreview.swift */; };
 		46A9B7D12D5068B000A3BE65 /* MyExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9B7D02D5068B000A3BE65 /* MyExtension.swift */; };
 		46A9B7D22D50790000A3BE65 /* MyExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9B7D02D5068B000A3BE65 /* MyExtension.swift */; };
+		46A9B7D42D50B8A700A3BE65 /* ShowMyQRVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9B7D32D50B8A700A3BE65 /* ShowMyQRVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		46A9B7CA2D505F2000A3BE65 /* PaymentWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PaymentWidgetExtension.entitlements; sourceTree = "<group>"; };
 		46A9B7CE2D50688C00A3BE65 /* UIKitPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitPreview.swift; sourceTree = "<group>"; };
 		46A9B7D02D5068B000A3BE65 /* MyExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExtension.swift; sourceTree = "<group>"; };
+		46A9B7D32D50B8A700A3BE65 /* ShowMyQRVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMyQRVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 				46A9B7C72D505EC700A3BE65 /* PostSummaryVC.swift */,
 				46A9B79E2D505D2200A3BE65 /* ViewController.swift */,
 				46A9B7A02D505D2200A3BE65 /* Main.storyboard */,
+				46A9B7D32D50B8A700A3BE65 /* ShowMyQRVC.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				46A9B79B2D505D2200A3BE65 /* AppDelegate.swift in Sources */,
 				46A9B79D2D505D2200A3BE65 /* SceneDelegate.swift in Sources */,
 				46A9B7C82D505EC700A3BE65 /* PostSummaryVC.swift in Sources */,
+				46A9B7D42D50B8A700A3BE65 /* ShowMyQRVC.swift in Sources */,
 				46A9B7D12D5068B000A3BE65 /* MyExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
