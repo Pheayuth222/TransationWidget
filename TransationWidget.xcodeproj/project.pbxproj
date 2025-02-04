@@ -25,6 +25,7 @@
 		46A9B7D22D50790000A3BE65 /* MyExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9B7D02D5068B000A3BE65 /* MyExtension.swift */; };
 		46A9B7D42D50B8A700A3BE65 /* ShowMyQRVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A9B7D32D50B8A700A3BE65 /* ShowMyQRVC.swift */; };
 		46B210862D51B7E200BF005A /* GenerateQR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B210852D51B7E200BF005A /* GenerateQR.swift */; };
+		46B210892D51BAEB00BF005A /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B210882D51BAEB00BF005A /* CurrencyFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		46A9B7D02D5068B000A3BE65 /* MyExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExtension.swift; sourceTree = "<group>"; };
 		46A9B7D32D50B8A700A3BE65 /* ShowMyQRVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMyQRVC.swift; sourceTree = "<group>"; };
 		46B210852D51B7E200BF005A /* GenerateQR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateQR.swift; sourceTree = "<group>"; };
+		46B210882D51BAEB00BF005A /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,11 +144,11 @@
 		46A9B7B82D505D7300A3BE65 /* PaymentWidget */ = {
 			isa = PBXGroup;
 			children = (
+				46B210872D51BADF00BF005A /* Helper */,
 				46A9B7B92D505D7300A3BE65 /* PaymentWidgetBundle.swift */,
 				46A9B7BB2D505D7300A3BE65 /* PaymentWidget.swift */,
 				46A9B7BD2D505D7500A3BE65 /* Assets.xcassets */,
 				46A9B7BF2D505D7500A3BE65 /* Info.plist */,
-				46B210852D51B7E200BF005A /* GenerateQR.swift */,
 			);
 			path = PaymentWidget;
 			sourceTree = "<group>";
@@ -178,6 +180,15 @@
 				46A9B7D02D5068B000A3BE65 /* MyExtension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		46B210872D51BADF00BF005A /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				46B210852D51B7E200BF005A /* GenerateQR.swift */,
+				46B210882D51BAEB00BF005A /* CurrencyFormatter.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +311,7 @@
 				46B210862D51B7E200BF005A /* GenerateQR.swift in Sources */,
 				46A9B7BA2D505D7300A3BE65 /* PaymentWidgetBundle.swift in Sources */,
 				46A9B7D22D50790000A3BE65 /* MyExtension.swift in Sources */,
+				46B210892D51BAEB00BF005A /* CurrencyFormatter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

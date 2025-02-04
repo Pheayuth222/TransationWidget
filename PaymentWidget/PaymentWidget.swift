@@ -106,7 +106,7 @@ struct MediumView: View {
             
             VStack(alignment: .leading, spacing: 0) {
                 Text("Updated: \(storeDate ?? "")")
-                    .font(.system(size: 9))
+                    .font(.system(size: 10))
                     .fontWeight(.regular)
                     .foregroundStyle(.gray)
                 Spacer(minLength: 5)
@@ -117,7 +117,7 @@ struct MediumView: View {
                     Text("Total: ")
                         .font(.headline)
                         .foregroundStyle(.blue)
-                    Text("$\(storeAmount)")
+                    Text(CurrencyFormatter.basicCurrencyFormat(Double(storeAmount) ?? 0.0))
                 }
                 Spacer()
                 /// Button Action
