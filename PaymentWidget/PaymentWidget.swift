@@ -28,7 +28,6 @@ struct TrialWidgetEntryView: View {
     
     var qrText = "00020101021129390016wbkhkhppxxx@wbkh0108304778120203WBC5204599953038405802KH5912YEN PHEAYUIT6010Phnom Penh6304D5B2"
     
-    
     var storeDate = UserDefaultsManager.shared.stringValue(forKey: "syncDate")
     
     @Environment (\.widgetFamily) var widgetFamily
@@ -37,68 +36,26 @@ struct TrialWidgetEntryView: View {
         
         switch widgetFamily {
         case .systemSmall:
-            VStack {
+            VStack(spacing: 5) {
                 Text("Woori QR")
-                    .font(.headline)
+                    .font(.system(size: 14))
                     .foregroundStyle(.blue)
                 ZStack {
-                    Image(uiImage: UIImage(data: getQRCodeDate(text: qrText)!)!)
+                    Image(uiImage: UIImage(data: GenerateQR.share.getQRCodeDate(text: qrText)!)!)
                         .resizable()
-                        .frame(width: 100, height: 100,alignment: .leading)
+                        .frame(width: 120, height: 120,alignment: .leading)
                     Image("wooriLogo")
                         .resizable()
                         .frame(width: 24, height: 24, alignment: .center)
                 }
             }
             .widgetURL(URL(string: "myapp://ShowMyQRVC/\(storeAmount)"))
+            .padding()
+            
         case .systemMedium:
             
-            HStack(alignment: .center) {
-                VStack {
-                    Text("Woori QR")
-                        .font(.headline)
-                        .foregroundStyle(.blue)
-                    ZStack {
-                        Image(uiImage: UIImage(data: getQRCodeDate(text: qrText)!)!)
-                            .resizable()
-                            .frame(width: 100, height: 100,alignment: .leading)
-                        Image("wooriLogo")
-                            .resizable()
-                            .frame(width: 24, height: 24, alignment: .center)
-                    }
-                    .widgetURL(URL(string: "myapp://PostSummaryVC/\(storeAmount)"))
-                }
-                Spacer(minLength: 5)
-                VStack {
-                    Text("Updated: \(storeDate ?? "")")
-                        .font(.system(size: 9))
-                        .fontWeight(.regular)
-                        .foregroundStyle(.gray)
-                    Text("Available Balance")
-                    HStack {
-                        Text("Total: ")
-                            .font(.headline)
-                            .foregroundStyle(.blue)
-                            .padding()
-                        Text("$\(storeAmount)")
-                    }
-                    /// Button Action
-                    HStack {
-                        Button(action: {
-                            // Action
-                            print("Scanning....")
-                        }) {
-                            Label("Scan", systemImage: "barcode.viewfinder")
-                        }
-                        Button(action: {
-                            print("Sharing...")
-                        }) {
-                            Label("Share", systemImage: "square.and.arrow.up")
-                        }
-                        .widgetURL(URL(string: "myapp://PostSummaryVC/\(storeAmount)"))
-                    }
-                }
-            }
+            MediumView(storeAmount: storeAmount, qrText: qrText, storeDate: storeDate)
+            
         case .systemLarge:
             VStack(alignment: .leading, spacing: 10) {
                 Text("Amount $\(storeAmount)")
@@ -117,41 +74,98 @@ struct TrialWidgetEntryView: View {
         }
     }
     
-    func getQRCodeDate(text: String) -> Data? {
-        guard let filter = CIFilter(name: "CIQRCodeGenerator") else { return nil }
-        let data = text.data(using: .ascii, allowLossyConversion: false)
-        filter.setValue(data, forKey: "inputMessage")
-        guard let ciimage = filter.outputImage else { return nil }
-        let transform = CGAffineTransform(scaleX: 10, y: 10)
-        let scaledCIImage = ciimage.transformed(by: transform)
-        let uiimage = UIImage(ciImage: scaledCIImage)
-        return uiimage.pngData()!
+    
+}
+
+struct MediumView: View {
+    
+    @State var storeAmount: String = ""
+    @State var qrText: String = ""
+    
+    @State var storeDate: String?
+    
+    var body: some View {
+        HStack(spacing: 10) {
+            VStack {
+                Text("Woori QR")
+                    .font(.headline)
+                    .foregroundStyle(.blue)
+                Link(destination: URL(string: "myapp://PostSummaryVC/\(storeAmount)")!, label: {
+                    
+                    ZStack {
+                        Image(uiImage: UIImage(data: GenerateQR.share.getQRCodeDate(text: qrText)!)!)
+                            .resizable()
+                            .frame(width: 100, height: 100,alignment: .leading)
+                        Image("wooriLogo")
+                            .resizable()
+                            .frame(width: 24, height: 24, alignment: .center)
+                    }
+                    //                        .widgetURL(URL(string: "myapp://PostSummaryVC/\(storeAmount)"))
+                })
+            }
+            
+            VStack(alignment: .leading, spacing: 0) {
+                Text("Updated: \(storeDate ?? "")")
+                    .font(.system(size: 9))
+                    .fontWeight(.regular)
+                    .foregroundStyle(.gray)
+                Spacer(minLength: 5)
+                Text("Available Balance")
+                
+                Spacer()
+                HStack {
+                    Text("Total: ")
+                        .font(.headline)
+                        .foregroundStyle(.blue)
+                    Text("$\(storeAmount)")
+                }
+                Spacer()
+                /// Button Action
+                HStack{
+                    Link(destination: URL(string: "myapp://ShowMyQRVC/\(storeAmount)")!, label: {
+                        Button(action: {
+                            // Action
+                            print("Scanning....")
+                            
+                        }) {
+                            Label("Scan", systemImage: "barcode.viewfinder")
+                        }
+                    })
+                    Spacer()
+                    Link(destination: URL(string: "myapp://PostSummaryVC/\(storeAmount)")!, label: {
+                        Button(action: {
+                            print("Sharing...")
+                        }) {
+                            Label("Share", systemImage: "square.and.arrow.up")
+                        }
+                    })
+                }
+            }
+        }
     }
 }
 
 struct PostEntryView: View {
     let post: Post?
-  let totalAmountString: String
-
-  var body: some View {
-    VStack(alignment: .leading) {
-        Text(post?.title ?? "")
-        .font(.headline)
-        Text(post?.body ?? "")
-        .font(.subheadline)
-        .lineLimit(3) // Adjust based on the size
-      Divider().padding(16)
-        Image("myQR")
-            .resizable()
-            .scaledToFit()
-            .frame(height: 100)
-            .cornerRadius(8)
+    let totalAmountString: String
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text(post?.title ?? "")
+                .font(.headline)
+            Text(post?.body ?? "")
+                .font(.subheadline)
+                .lineLimit(3) // Adjust based on the size
+            Divider().padding(16)
+            Image("myQR")
+                .resizable()
+                .scaledToFit()
+                .frame(height: 100)
+                .cornerRadius(8)
+        }
+        .padding()
     }
-    .padding()
-  }
 }
-
-
 
 func encodePost(_ post: Post) -> String {
     // Use a suitable encoding method, e.g., JSON encoding
@@ -206,6 +220,7 @@ struct Provider: TimelineProvider {
             }
             let posts = try? JSONDecoder().decode([Post].self, from: data)
             completion(posts ?? [])
+            print("Post!!!")
         }
         task.resume()
     }
@@ -232,10 +247,6 @@ struct TrialWidget: Widget {
         .supportedFamilies([
             .systemSmall,
             .systemMedium,
-            //            .systemLarge,
-            //            .accessoryCircular,
-            //            .accessoryRectangular,
-            //            .accessoryInline
         ])
         
     }
