@@ -37,22 +37,27 @@ struct TrialWidgetEntryView: View {
     
     switch widgetFamily {
     case .systemSmall:
-      VStack(spacing: 5) {
-        Text("Woori QR")
-          .font(.system(size: 14))
-          .foregroundStyle(.blue)
-        ZStack {
-          Image(uiImage: UIImage(data: GenerateQR.share.getQRCodeDate(text: qrText)!)!)
-            .resizable()
-            .frame(width: 120, height: 120,alignment: .leading)
-          Image("wooriLogo")
-            .resizable()
-            .frame(width: 24, height: 24, alignment: .center)
+      if isLoggedIn ?? false {
+        
+        VStack(spacing: 5) {
+          Text("Woori QR")
+            .font(.system(size: 14))
+            .foregroundStyle(.blue)
+          ZStack {
+            Image(uiImage: UIImage(data: GenerateQR.share.getQRCodeDate(text: qrText)!)!)
+              .resizable()
+              .frame(width: 120, height: 120,alignment: .leading)
+            Image("wooriLogo")
+              .resizable()
+              .frame(width: 24, height: 24, alignment: .center)
+          }
         }
+        .widgetURL(URL(string: "myapp://ShowMyQRVC/\(storeAmount)"))
+        .padding()
+        
+      } else {
+        AddNewQR(isLoggedIn: isLoggedIn)
       }
-      .widgetURL(URL(string: "myapp://ShowMyQRVC/\(storeAmount)"))
-      .padding()
-      
     case .systemMedium:
       if isLoggedIn ?? false {
         MediumView(storeAmount: storeAmount, qrText: qrText, storeDate: storeDate)
